@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/* Reset and global styles */
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fff;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Flexbox container for centered layout */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(45deg, rgba(0, 0, 3, 0.1), rgba(0, 0, 0, 0.5)), url(../bgimg/3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
+}
+
+/* Center box with responsive form styling */
+.container_box, .container_box form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* max-width: 600px; */
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form heading with smooth font */
+.container form h3, .container_box form h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 5px;
+  text-transform: capitalize;
+  color: rgb(22, 21, 21);
+  transition: color 0.3s ease;
+}
+
+/* Highlighted links */
+.container form h3 a:first-child, .container_box form h3 a:first-child {
+  color: rgb(233, 3, 3);
+}
+
+/* Input fields with styling */
+.container form .text_field, .container_box form .text_field {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin: 5px 0;
+  padding: 13px;
+  font-size: 1rem;
+  color: black;
+  border: 2px solid rgb(0, 181, 226);
+  transition: all 0.3s ease, box-shadow 0.2s ease;
+}
+.container form .text_field:focus, .container_box form .text_field:focus {
+  outline: none;
+  border-color: rgb(0, 167, 245);
+  box-shadow: 0 0 5px rgba(0, 167, 245, 0.5);
+}
+
+/* Button styling with smooth hover and lighting effect */
+.container form .btn, .container_box form .btn {
+  background-color: #fff;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.container form .btn:hover, .container_box form .btn:hover {
+  background: rgb(0, 167, 245);
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 167, 245, 0.5);
+}
+
+/* Responsive message box */
+.message {
+  position: sticky;
+  top: 0;
+  margin: 0 auto;
+  width: 80%;
+  background-color: #fff;
+  padding: 6px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid rgb(68, 203, 236);
+  border-radius: 8px;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.message span {
+  font-size: 1.4rem;
+  color: rgb(240, 18, 18);
+  font-weight: 400;
+}
+.message i {
+  cursor: pointer;
+  color: rgb(3, 227, 235);
+  font-size: 1rem;
+}
+
+/* Products grid with responsive design */
+.show-products .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.show-products .box {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(15, 156, 221);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  animation: fadeIn 0.5s ease forwards;
+}
+.show-products .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.show-products .box img {
+  height: 180px;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+.show-products .box img:hover {
+  transform: scale(1.05);
+}
+.show-products .box .name {
+  font-size: 1.2rem;
+  color: #333;
+  text-transform: capitalize;
+}
+.show-products .box .price {
+  font-size: 1.5rem;
+  color: #000;
+  margin-top: 10px;
+}
+
+/* Buttons for update and delete with transition */
+.update_btn, .delete_btn {
+  padding: 9px 15px;
+  margin: 6px;
+  border-radius: 10px;
+  color: white;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.update_btn {
+  background-color: rgb(255, 187, 0);
+}
+.update_btn:hover {
+  background-color: rgb(255, 170, 0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 170, 0, 0.5);
+}
+.delete_btn {
+  background-color: rgb(238, 0, 0);
+}
+.delete_btn:hover {
+  background-color: rgb(210, 0, 0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(210, 0, 0, 0.5);
+}
+
+/* Form layout for editing */
+:root {
+  /* Color Variables */
+  --primary-color: #4ccaf0;
+  --hover-color: #38b2d9;
+  --background-overlay: rgba(255, 255, 255, 0.9);
+  --background-form: #ffffff;
+  --background-input: #f5f5f5;
+  --text-color: #333333;
+  --placeholder-color: #aaaaaa;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Main Overlay for the Edit Product Form */
+.edit-product-form {
+  background-color: var(--background-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1200;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  animation: fadeInBackdrop 0.5s ease forwards;
+}
+
+/* Form Styling */
+.edit-product-form form {
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem; /* Increased border radius for a softer look */
+  background-color: var(--background-form);
+  box-shadow: 0 6px 20px var(--box-shadow-color);
+  animation: fadeInForm 0.6s ease forwards;
+}
+
+/* Form Title */
+.edit-product-form form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem; /* Larger title */
+  color: var(--text-color);
+}
+
+/* Box Container for Input Fields */
+.edit-product-form form .box {
+  margin: 15px 0;
+  padding: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+  background-color: var(--background-input);
+  font-size: 1rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Focus State for Input Box */
+.edit-product-form form .box:focus-within {
+  border-color: var(--hover-color); /* Use hover color */
+  background-color: #e9f7fc; /* Lighter background on focus */
+}
+
+/* Input and Textarea Styles */
+.edit-product-form form .box input,
+.edit-product-form form .box textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+/* Placeholder Styles */
+.edit-product-form form .box input::placeholder,
+.edit-product-form form .box textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* Button Styles */
+.edit-product-form form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 1rem; /* Space above the button */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Button Hover Effect */
+.edit-product-form form button:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Focus Effect */
+.edit-product-form form button:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+/* Fade In Animation for Backdrop */
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade In Animation for Form */
+@keyframes fadeInForm {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container_box, .container form {
+    padding: 0 20px;
+    width: 90%;
+  }
+  .show-products .box-container {
+    padding: 0;
+  }
+}
+.edit-product-form form img {
+  height: 233px;
+  margin-bottom: 1rem;
+}

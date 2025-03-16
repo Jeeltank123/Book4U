@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/* CSS Variables for Theme Colors */
+:root {
+    --primary-color: #007BFF; /* Bright Blue */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #0056b3; /* Darker Blue for accents */
+    --background-color: #f8f9fa; /* Light Background */
+    --card-border-color: #007BFF; /* Border color */
+    --hover-bg-color: rgba(0, 123, 255, 0.1); /* Light blue hover background */
+    --button-bg-color: linear-gradient(to right, #007BFF, #00BFFF); /* Button gradient */
+    --button-hover-color: linear-gradient(to right, #0056b3, #0099cc); /* Darker button gradient */
+    --text-color: #333; /* Dark Text */
+    --header-bg: #ffffff; /* Header Background */
+}
+
+/* Dark Mode Support */
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #343a40; /* Dark background */
+       /* --card-border-color: #007BFF;  Border color remains the same */
+       /* --text-color: #f8f9fa;  Light text for dark mode */
+        /*--header-bg: #495057;  Dark header background */
+ /*   }
+} */
+
+/* Global Styles */
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header Styles */
+header {
+    background: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+header:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Styles */
+.logo a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo a span {
+    color: var(--primary-color);
+    font-weight: bold;
+    padding-right: 5px;
+    font-size: 36px;
+    transition: transform 0.2s;
+}
+
+.logo a .me {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 24px;
+}
+
+/* Navigation Styles */
+.nav a {
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav a:hover {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Button Styles */
+header .right {
+    display: flex;
+    align-items: center;
+}
+
+header .right .Btn {
+    color: #fff;
+    margin: 0 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 25px; /* More rounded corners */
+    background: var(--button-bg-color);
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+header .right .Btn:hover {
+    background: var(--button-hover-color);
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Main Box Styles */
+.main_box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem; /* More space between items */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color); /* Bright white background for cards */
+    border-radius: 20px; /* Increased rounded corners for a softer look */
+    border: 1px solid var(--card-border-color); /* Border with theme color */
+    height: 450px; /* Slightly taller for more content space */
+    overflow: hidden; /* Prevent overflow from content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Increased hover lift for a more dynamic effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); /* Deeper shadow on hover */
+    background-color: var(--hover-bg-color); /* Subtle background change on hover for interactivity */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px; /* Increased height for better image display */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-top-left-radius: 20px; /* Rounded corners for the top of the image */
+    border-top-right-radius: 20px; /* Rounded corners for the top of the image */
+}
+
+.card-body {
+    padding: 2rem; /* More padding for better spacing */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* Relative positioning for elements inside */
+}
+
+/* Card Title Styles */
+.card-title {
+    font-size: 1.7rem; /* Larger title size for emphasis */
+    font-weight: 700; /* Bold font weight */
+    color: var(--primary-color); /* Use the primary color for consistency */
+    margin-bottom: 0.5rem; /* Space below the title */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+.card-title:hover {
+    color: var(--accent-color); /* Change color on hover for interactivity */
+}
+
+/* Card Description Styles */
+.card-body p {
+    font-size: 1.2rem; /* Slightly larger for better readability */
+    font-weight: 500; /* Medium weight for balance */
+    color: #555; /* Softer description color */
+    line-height: 1.5; /* Increased line height for better readability */
+}
+
+/* Button Styles */
+.card-body .btn {
+    margin-top: 1rem; /* Space above button */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 30px; /* More rounded button */
+    background-color: var(--button-bg-color); /* Use button gradient color */
+    color: #fff; /* White text on button */
+    font-weight: 600; /* Bold button text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Light shadow for button */
+}
+
+.card-body .btn:hover {
+    background-color: var(--button-hover-color); /* Change color on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        height: auto; /* Allow card height to adjust based on content */
+    }
+
+    .card-img-top {
+        height: 120px; /* Smaller image height on mobile */
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Adjust title size for mobile */
+    }
+
+    .card-body p {
+        font-size: 1rem; /* Adjust description size for mobile */
+    }
+}
+
+/* Button Primary Styles */
+.btn-primary {
+    color: #fff;
+    background: var(--button-bg-color);
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+    padding: 12px 20px; /* Larger padding */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background: var(--button-hover-color);
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Link Styles */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color); /* Change to accent color on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    .main_box {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        padding: 0 10px;
+    }
+
+    .card {
+        height: auto; /* Allow card height to adjust based on content */
+    }
+
+    .card-img-top {
+        height: 120px; /* Smaller image height on mobile */
+    }
+}
+
+@media (min-width: 1200px) {
+    .main_box {
+        padding: 20px 10px;
+    }
+}
